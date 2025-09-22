@@ -5,5 +5,30 @@
     "express": "^5.1.0",
     "prisma": "^6.16.2",
     "swagger-ui-express": "^5.0.1"
-  }
+  },
+  "name": "postgres-mongo-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZiadYasser411/mongo-and-postgres-crud-with-prisma.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ZiadYasser411/mongo-and-postgres-crud-with-prisma/issues"
+  },
+  "homepage": "https://github.com/ZiadYasser411/mongo-and-postgres-crud-with-prisma#readme"
 }
