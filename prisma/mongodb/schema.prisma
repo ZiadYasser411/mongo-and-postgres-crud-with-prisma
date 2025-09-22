@@ -1,0 +1,22 @@
+generator mongoClient {
+  provider = "prisma-client-js"
+  output   = "../generated/mongodb"
+}
+
+datasource mongodb {
+  provider = "mongodb"
+  url      = env("MONGO_DATABASE_URL")
+}
+
+model Product {
+  id      String   @id @default(auto()) @map("_id") @mongodb.ObjectId
+  name    String
+  reviews Review[]
+}
+
+model Review {
+  id        String  @id @default(auto()) @map("_id") @mongodb.ObjectId
+  comment   String
+  product   Product @relation(fields: [productId], references: [id])
+  productId String  @mongodb.ObjectId
+}

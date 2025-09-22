@@ -17,3 +17,5 @@ yarn-error.log*
 # Docker
 postgres_data/
 mongo_data/
+
+/generated/prisma
