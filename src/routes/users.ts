@@ -3,12 +3,12 @@ import { pg } from '../prisma'
 
 const router = Router()
 
-router.get('/users/', async (req, res) => {
+router.get('/', async (_, res) => {
     const users = await pg.user.findMany()
     res.json(users)
 })
 
-router.get('/users/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     const { id } = req.params
     const user = await pg.user.findUnique({
         where: { id }
@@ -16,7 +16,7 @@ router.get('/users/:id', async (req, res) => {
     res.json(user)
 })
 
-router.post('/users/', async (req, res) => {
+router.post('/', async (req, res) => {
     const { name, email, occupationId } = req.body
     const user = await pg.user.create({
         data: {
@@ -28,7 +28,7 @@ router.post('/users/', async (req, res) => {
     res.json(user)
 })
 
-router.put('/users/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     const { id } = req.params
     const { name, email, occupationId } = req.body
     const user = await pg.user.update({
@@ -42,7 +42,7 @@ router.put('/users/:id', async (req, res) => {
     res.json(user)
 })
 
-router.delete('/users/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     const { id } = req.params
     const user = await pg.user.delete({
         where: { id }
