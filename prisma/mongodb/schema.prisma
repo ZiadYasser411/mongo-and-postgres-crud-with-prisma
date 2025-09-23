@@ -15,8 +15,8 @@ model Product {
 }
 
 model Review {
-  id        String  @id @default(auto()) @map("_id") @mongodb.ObjectId
+  id        String   @id @default(auto()) @map("_id") @mongodb.ObjectId
   comment   String
-  product   Product @relation(fields: [productId], references: [id])
-  productId String  @mongodb.ObjectId
+  product   Product? @relation(fields: [productId], references: [id])
+  productId String?  @mongodb.ObjectId
 }
