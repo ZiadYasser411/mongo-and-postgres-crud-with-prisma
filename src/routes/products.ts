@@ -14,13 +14,23 @@ router.get('/', async (_, res) => {
   res.json(products)
 })
 
-router.post('/:id/reviews', async (req, res) => {
+router.get('/:id', async (req, res) => {
   const { id } = req.params
-  const { comment } = req.body
-  const review = await mongo.review.create({
-    data: { comment, productId: id }
+  const product = await mongo.product.findUnique({
+    where: { id },
+    include: { reviews: true }
   })
-  res.json(review)
+  res.json(product)
+})
+
+router.put('/:id', async (req, res) => {
+  const { id } = req.params
+  const { name } = req.body
+  const product = await mongo.product.update({
+    where: { id },
+    data: { name }
+  })
+  res.json(product)
 })
 
 router.delete('/:id', async (req, res) => {
