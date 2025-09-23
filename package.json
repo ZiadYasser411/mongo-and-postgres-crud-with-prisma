@@ -3,7 +3,6 @@
     "@prisma/client": "^6.16.2",
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
-    "prisma": "^6.16.2",
     "swagger-ui-express": "^5.0.1"
   },
   "name": "postgres-mongo-crud",
@@ -13,11 +12,17 @@
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.5.2",
+    "prisma": "^6.16.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/index.ts",
+    "migrate:pg": "prisma migrate dev --schema=prisma/postgres/schema.prisma --name init",
+    "generate:pg": "prisma generate --schema=prisma/postgres/schema.prisma",
+    "generate:mongo": "prisma generate --schema=prisma/mongodb/schema.prisma",
+    "generate:all": "npm run generate:pg && npm run generate:mongo"
   },
   "repository": {
     "type": "git",
