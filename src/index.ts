@@ -6,7 +6,7 @@ import productRoutes from './routes/products'
 import reviewRoutes from './routes/reviews'
 
 const app = express()
-app.use(bodyParser.json())
+app.use(express.json())
 
 app.use('/users', userRoutes)
 app.use('/occupations', occupationRoutes)
