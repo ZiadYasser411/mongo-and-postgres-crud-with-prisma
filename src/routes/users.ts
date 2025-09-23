@@ -47,7 +47,7 @@ router.delete('/:id', async (req, res) => {
     const user = await pg.user.delete({
         where: { id }
     })
-    res.json(user)
+    res.json({ message: 'user deleted' })
 })
 
 export default router
