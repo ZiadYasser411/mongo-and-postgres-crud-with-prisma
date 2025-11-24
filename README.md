@@ -53,3 +53,8 @@ npx prisma db push --schema=prisma/mongodb/schema.prisma
 ```bash
 npm run dev
 ```
+
+<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/06ddc295-164c-41bd-8a13-9e004d3a46f4" />
+<img width="1801" height="959" alt="image" src="https://github.com/user-attachments/assets/55ca7b6c-a3e4-44a6-b0d9-5f650479d55a" />
+<img width="1800" height="949" alt="image" src="https://github.com/user-attachments/assets/8518e54c-6f3d-49f8-9484-1a065ee918dc" />
+<img width="1808" height="101" alt="image" src="https://github.com/user-attachments/assets/678ab291-7c5c-4a19-885a-1a933879c730" />
